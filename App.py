@@ -29,6 +29,7 @@ Hombre=df_conavibygen[df_conavibygen['Genero']=='Hombre']['Monto']
 Mujer=df_conavibygen[df_conavibygen['Genero']=='Mujer']['Monto']
 
 app = dash.Dash(__name__)
+server = app.server
 
 app = dash.Dash()
 colors = {
@@ -68,3 +69,4 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+    
