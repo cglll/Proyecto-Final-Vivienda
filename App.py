@@ -12,21 +12,21 @@ import pandas as pd
 from os import chdir, getcwd
 import os
 
-wd=getcwd()
-chdir(wd)
-csv_dir = os.path.join(wd, 'Conavi','202012.csv')
-print(csv_dir)
-df_conavi2020= pd.read_csv(csv_dir,  encoding='latin-1')
+#wd=getcwd()
+#chdir(wd)
+#csv_dir = os.path.join(wd, 'Conavi','202012.csv')
+#print(csv_dir)
+#df_conavi2020= pd.read_csv(csv_dir,  encoding='latin-1')
 
 #df_conavi2019['Monto']=df_conavi2019['Monto'].str.replace(',','')
-df_conavi2020['Monto']=df_conavi2020['Monto'].str.replace(',','')
+#df_conavi2020['Monto']=df_conavi2020['Monto'].str.replace(',','')
 #df_conavi2019['Monto']=df_conavi2019['Monto'].astype(float)
-df_conavi2020['Monto']=df_conavi2020['Monto'].astype(float)
+#df_conavi2020['Monto']=df_conavi2020['Monto'].astype(float)
 
-df_conavibygen=df_conavi2020.groupby(['Mes acumulado','Genero'],as_index=False)['Monto'].mean()
-Month=df_conavibygen[df_conavibygen['Genero']=='Hombre']['Mes acumulado']
-Hombre=df_conavibygen[df_conavibygen['Genero']=='Hombre']['Monto']
-Mujer=df_conavibygen[df_conavibygen['Genero']=='Mujer']['Monto']
+#df_conavibygen=df_conavi2020.groupby(['Mes acumulado','Genero'],as_index=False)['Monto'].sum()
+Month=[1,2,3,4]#df_conavibygen[df_conavibygen['Genero']=='Hombre']['Mes acumulado']
+Hombre=[1,2,3,4]#df_conavibygen[df_conavibygen['Genero']=='Hombre']['Monto']
+Mujer=[1,2,3,4]#df_conavibygen[df_conavibygen['Genero']=='Mujer']['Monto']
 
 app = dash.Dash(__name__)
 server = app.server
